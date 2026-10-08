@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+
+# Окружение и секреты
+.env
+.env.*
+!.env.example
+
+# Логи и локальные данные
+logs/
+data/
+bot.log
+
+# Временные/служебные
+temp/
+report.txt
+image.png
+test_proxy.py
+check_openai_key.py

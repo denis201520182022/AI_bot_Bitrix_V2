@@ -1,0 +1,16 @@
+.env
+.env.prod
+.env.local
+.git/
+.gitignore
+venv/
+__pycache__/
+*.pyc
+logs/
+data/
+image.png
+test_proxy.py
+check_openai_key.py
+temp/
+report.txt
+.dockerignore

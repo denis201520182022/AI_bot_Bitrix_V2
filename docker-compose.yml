@@ -1,0 +1,30 @@
+version: "3.9"
+
+services:
+  bot:
+    build: .
+    container_name: gpt_avito_bitrix_bot
+    restart: always
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    environment:
+      - APP_ENV=prod
+      - LOG_FILE=/app/logs/bot.log
+      - PROMPT_FILE=src/prompt.txt
+    depends_on:
+      - redis
+    volumes:
+      - ./logs:/app/logs
+      - ./src/prompt.txt:/app/src/prompt.txt:ro
+
+  redis:
+    image: redis:7-alpine
+    container_name: redis_chat
+    restart: always
+    volumes:
+      - redis_data:/data
+
+volumes:
+  redis_data:
